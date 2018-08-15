@@ -3,10 +3,25 @@
 <beans xmlns = "http://www.springframework.org/schema/beans"
        xmlns:xsi = "http://www.w3.org/2001/XMLSchema-instance"
        xsi:schemaLocation = "http://www.springframework.org/schema/beans
-   http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+   http://www.springframework.org/schema/beans/spring-beans-3.0.xsd"
 
-    <bean id = "helloWorld" class = "spring.HelloWorld">
+
+       default-init-method = "afterPropertiesSet"
+       default-destroy-method = "destroy">
+
+    <bean id = "helloWorld" class = "spring.java_bean_scopes.HelloWorld"  scope="prototype">
         <property name = "message" value = "Hello World!"/>
+    </bean>
+
+    <bean id = "spellCheck" class = "spring.dependency_injection.SpellCheckImpl1" />
+
+    <bean id = "textEditor" class = "spring.dependency_injection.TextEditorImpl1">
+        <constructor-arg ref="spellCheck"/>
+    </bean>
+
+    <bean id = "textEditor2" class = "spring.dependency_injection.TextEditorImpl2">
+        <constructor-arg index="0" value="this is a two argument constructor"/>
+        <constructor-arg index="1" ref="spellCheck"/>
     </bean>
 
 </beans>

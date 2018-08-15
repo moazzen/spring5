@@ -1,4 +1,4 @@
-package spring;
+package spring.java_bean_scopes;
 
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
@@ -11,5 +11,9 @@ public class MainClass {
         ApplicationContext context = new ClassPathXmlApplicationContext("Beans.xml");
         HelloWorld helloWorld = (HelloWorld) context.getBean("helloWorld");
         helloWorld.getMessage();
+        HelloWorld helloWorld2 = (HelloWorld) context.getBean("helloWorld");
+        helloWorld2.getMessage();
+        HelloWorld helloWorld3 = (HelloWorld) context.getBean("helloWorld");
+        helloWorld3.getMessage();
     }
 }
