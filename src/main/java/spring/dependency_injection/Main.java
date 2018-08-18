@@ -16,5 +16,20 @@ public class Main {
 
         TextEditor textEditor2 = (TextEditor)context.getBean("textEditor2");
         textEditor2.spellCheck();
+
+        Util.Util.separator();
+
+        TextEditor textEditor3 = (TextEditor)context.getBean("textEditor3");
+        textEditor3.spellCheck();
+
+        Util.Util.separator();
+
+        TextEditor textEditor4 = (TextEditor)context.getBean("textEditor4");
+        textEditor4.spellCheck();
+
+        Util.Util.separator();
+
+        TextEditor textEditor5 = (TextEditor)context.getBean("textEditor5");
+        textEditor5.spellCheck();
     }
 }

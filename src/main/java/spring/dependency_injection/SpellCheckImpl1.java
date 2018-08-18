@@ -5,10 +5,10 @@ package spring.dependency_injection;
  */
 public class SpellCheckImpl1 implements SpellCheck {
     public SpellCheckImpl1() {
-        System.out.println("SpellCheck Constructor");
+        System.out.println("SpellCheck Constructor Impl1");
     }
 
     public void spellChecker() {
-        System.out.println("SpellCheck Function");
+        System.out.println("SpellCheck Function Impl1");
     }
 }
